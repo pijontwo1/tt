@@ -66,7 +66,7 @@
 	<button name="btn3" id="btn3" onclick="dod()">삭제</button>
 	<button name="btn4" id="btn4" onclick="nosort()">번호 재정렬</button>
 	<p>
-		시작일 : <input type="date"> 종료일 : <input type="date">
+		시작일a : <input type="date"> 종료일 : <input type="date">
 		<button>조회</button>
 	<p>
 	<table id="menutb">
