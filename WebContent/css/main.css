@@ -1,0 +1,41 @@
+table, td, th{
+	border: 1px solid black;
+}
+
+.table1,#menutb {
+	border-collapse: collapse;
+	
+}
+td{
+	font-size: 12px;
+	text-align: center;
+}
+#menutb,.table1{
+width: 100%;
+}
+
+th{
+	font-size: 12px;
+}
+
+#cbox{width: 20px;}
+#no{width: 35px;}
+#tm{width: 80px;}
+#pno{width: 80px;}
+#pn{width: 120px;}
+#di{width: 70px;}
+#cl{width: 80px;}
+#da{width: 70px;}
+#sa{width: 70px;}
+#m1{width: 60px;}
+#m2{width: 60px;}
+#m3{width: 60px;}
+#m4{width: 60px;}
+#m5{width: 60px;}
+#m6{width: 60px;}
+#m7{width: 60px;}
+#m8{width: 60px;}
+#pr{width: 60px;}
+#ra{width: 30px;}
+#ipd{width: 65px;}
+#inp{width: 35px;}
