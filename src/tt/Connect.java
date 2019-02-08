@@ -88,6 +88,52 @@ public class Connect {
 	}
 	
 	
+	public JqGridBean date_list(String start_date, String end_date) {
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String sql=null;
+		JqGridBean bean=new JqGridBean();
+		try {
+			con=pool.getConnection();
+			sql="select * from asp where `date`>=? and `date`<=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, start_date);
+			pstmt.setString(2, end_date);
+			rs=pstmt.executeQuery();
+			if (rs.next()) {
+				bean.setNo(rs.getInt("no"));
+				bean.setTeam(rs.getString("team"));
+				bean.setProject_no(rs.getString("project_no"));
+				bean.setProject_name(rs.getString("project_name"));
+				bean.setDivision(rs.getString("division"));
+				bean.setClient(rs.getString("client"));
+				bean.setDate(rs.getString("date"));
+				bean.setSales(rs.getInt("sales"));
+				bean.setM1(rs.getInt("m1"));
+				bean.setM2(rs.getInt("m2"));
+				bean.setM3(rs.getInt("m3"));
+				bean.setM4(rs.getInt("m4"));
+				bean.setM5(rs.getInt("m5"));
+				bean.setM6(rs.getInt("m6"));
+				bean.setM7(rs.getString("m7"));
+				bean.setM8(rs.getInt("m8"));
+				bean.setProfit(rs.getInt("profit"));
+				bean.setRate(rs.getInt("rate"));
+				bean.setInput_date(rs.getString("input_date"));
+				bean.setInput(rs.getString("input"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			pool.freeConnection(con,pstmt,rs);
+		}
+		return bean;
+		
+	}
+	
+	
+	
 	
 	public boolean insert(String team,String project_no,String project_name,String division,
 			String client,String date,int sales,int m1,int m2,int m3,int m4,int m5,
@@ -177,5 +223,28 @@ public class Connect {
 	}
 	*/
 	
+	
+	
+	public boolean date_insert(String date) {
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		String sql=null;
+		boolean flag=false;
+		try {
+			con=pool.getConnection();
+			sql="insert tt values(?)";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1,date);
+			
+			if (pstmt.executeUpdate()==1) {
+				flag=true;
+				}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			pool.freeConnection(con,pstmt);
+		}
+		return flag;
+	}
 	
 }

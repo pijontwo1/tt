@@ -13,9 +13,8 @@
 <title>조회</title>
 
 <link href="css/main.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="bower_components/tui-grid/dist/tui-grid.css" />
-
-<script src="bower_components/jquery/jquery.js"></script>
 <script src="bower_components/underscore/underscore.js"></script>
 <script src="bower_components/backbone/backbone.js"></script>
 <script src="bower_components/tui-code-snippet/dist/tui-code-snippet.js"></script>
@@ -59,11 +58,39 @@
 		}
 	}
 	
-	<%-- function nosort() {
-		<%boolean nosort_res=mgr.nosort();%>
-		alert("<%=nosort_res%>");
-		
-	} --%>
+
+	/* var grid = new tui.Grid({
+	    el: $('#grid'),
+	    data: gridData,
+	    scrollX: false,
+	    scrollY: false,
+	    columns: [
+	        {
+	            title: 'Name',
+	            name: 'name'
+	        },
+	        {
+	            title: 'Artist',
+	            name: 'artist'
+	        },
+	        {
+	            title: 'Type',
+	            name: 'type'
+	        },
+	        {
+	            title: 'Release',
+	            name: 'release'
+	        },
+	        {
+	            title: 'Genre',
+	            name: 'genre'
+	        }
+	    ]
+	}); */
+	
+	
+	
+	
 	
 </script>
 
@@ -78,7 +105,10 @@
 		시작일aa : <input type="date"> 종료일 : <input type="date">
 		<button>조회</button>
 	<p>
-	<table id="menutb">
+	
+	<div id="grid"></div>
+	
+	<%-- <table id="menutb">
 		<tr>
 			<th rowspan="2" id="cbox"></th>
 			<th rowspan="2" id="no">번호</th>
@@ -170,7 +200,7 @@
 			%>
 
 		</table>
-	</form>
+	</form> --%>
 
 </body>
 </html>

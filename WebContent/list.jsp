@@ -56,6 +56,14 @@
 		
 	} --%>
 	
+	function date_list() {
+		var d=document.getElementById("start_date").value;
+		
+		
+	}
+	
+	
+	
 </script>
 
 </head>
@@ -64,10 +72,13 @@
 	<button name="btn1" id="btn1" onclick="a()">Excel 다운로드</button>
 	<button name="btn2" id="btn2" onclick="chk()">체크확인</button>
 	<button name="btn3" id="btn3" onclick="dod()">삭제</button>
-	<button name="btn4" id="btn4" onclick="nosort()">번호 재정렬</button>
+	<!-- <button name="btn4" id="btn4" onclick="nosort()">번호 재정렬</button> -->
 	<p>
-		시작일aa : <input type="date"> 종료일 : <input type="date">
-		<button>조회</button>
+		<form action="date_list.jsp" method="post">
+		시작일 : <input name="start_date" id="start_date" type="date"> 종료일 : <input id="end_date" type="date">
+		<button onclick="date_list()">조회</button>
+		<button type="submit">조회하기</button>
+		</form>
 	<p>
 	<table id="menutb">
 		<tr>
