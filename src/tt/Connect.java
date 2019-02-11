@@ -88,7 +88,7 @@ public class Connect {
 	}
 	
 	
-	public JqGridBean date_list(String start_date, String end_date) {
+	public JqGridBean date_list(String start_date, String end_date, int i) {
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
@@ -96,10 +96,11 @@ public class Connect {
 		JqGridBean bean=new JqGridBean();
 		try {
 			con=pool.getConnection();
-			sql="select * from asp where `date`>=? and `date`<=?";
+			sql="select * from asp where `date`>=? and `date`<=? and no=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, start_date);
 			pstmt.setString(2, end_date);
+			pstmt.setInt(3, i);
 			rs=pstmt.executeQuery();
 			if (rs.next()) {
 				bean.setNo(rs.getInt("no"));

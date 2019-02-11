@@ -57,7 +57,10 @@
 	} --%>
 	
 	function date_list() {
-		var d=document.getElementById("start_date").value;
+		var d1=document.getElementById("start_date").value;
+		var d2=document.getElementById("end_date").value;
+		
+		alert(d1+"\n"+d2);
 		
 		
 	}
@@ -75,7 +78,7 @@
 	<!-- <button name="btn4" id="btn4" onclick="nosort()">번호 재정렬</button> -->
 	<p>
 		<form action="date_list.jsp" method="post">
-		시작일 : <input name="start_date" id="start_date" type="date"> 종료일 : <input id="end_date" type="date">
+		시작일 : <input name="start_date" id="start_date" type="date"> 종료일 : <input name="end_date" id="end_date" type="date">
 		<button onclick="date_list()">조회</button>
 		<button type="submit">조회하기</button>
 		</form>
