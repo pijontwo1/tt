@@ -56,14 +56,6 @@
 		
 	} --%>
 	
-	function date_list() {
-		var d1=document.getElementById("start_date").value;
-		var d2=document.getElementById("end_date").value;
-		
-		alert(d1+"\n"+d2);
-		
-		
-	}
 	
 	
 	
@@ -76,13 +68,15 @@
 	<button name="btn2" id="btn2" onclick="chk()">체크확인</button>
 	<button name="btn3" id="btn3" onclick="dod()">삭제</button>
 	<!-- <button name="btn4" id="btn4" onclick="nosort()">번호 재정렬</button> -->
+	
 	<p>
 		<form action="date_list.jsp" method="post">
-		시작일 : <input name="start_date" id="start_date" type="date"> 종료일 : <input name="end_date" id="end_date" type="date">
-		<button onclick="date_list()">조회</button>
+		시작일 : <input name="start_date" id="start_date" type="date" required="required">
+		종료일 : <input name="end_date" id="end_date" type="date" required="required">
 		<button type="submit">조회하기</button>
 		</form>
 	<p>
+	
 	<table id="menutb">
 		<tr>
 			<th rowspan="2" id="cbox"></th>
@@ -141,7 +135,9 @@
 
 
 			<%
-				for (int i = 0; i <= 300; i++) {
+				int nowPage,startPage,endPage,maxRow;
+				
+				for (int i = 0; i <= 10; i++) {
 					JqGridBean list = mgr.list(i);
 					if (list.getNo() != 0) {
 			%>
@@ -176,6 +172,8 @@
 
 		</table>
 	</form>
+	
+	<div>aa</div>
 
 </body>
 </html>
