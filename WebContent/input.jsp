@@ -77,7 +77,7 @@ input {
 						%>
 
 				</select></td>
-				<td><input name="project_no" required></td>
+				<td><input name="project_no" required ></td>
 				<td><input name="project_name" required></td>
 				<td><input name="division" required></td>
 				<td><input name="client" required></td>
