@@ -13,18 +13,25 @@
 <title>조회</title>
 
 <link href="css/main.css" rel="stylesheet" type="text/css">
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" type="text/css" href="bower_components/tui-grid/dist/tui-grid.css" />
-<script src="bower_components/underscore/underscore.js"></script>
-<script src="bower_components/backbone/backbone.js"></script>
-<script src="bower_components/tui-code-snippet/dist/tui-code-snippet.js"></script>
-<script src="bower_components/tui-pagination/dist/tui-pagination.js"></script>
-<script src="bower_components/tui-date-picker/dist/tui-date-picker.js"></script>
-<script src="bower_components/tui-grid/dist/tui-grid.js"></script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script
 	src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+	
+<script src="node_modules/jquery/jquery.js"></script>
+<script src="node_modules/underscore/underscore.js"></script>
+<script src="node_modules/backbone/backbone.js"></script>
+<script src="node_modules/tui-code-snippet/dist/tui-code-snippet.js"></script>
+<script src="node_modules/tui-pagination/dist/tui-pagination.js"></script>
+<script src="node_modules/tui-date-picker/dist/tui-date-picker.js"></script>
+<script src="node_modules/tui-grid/dist/tui-grid.js"></script>
+	
+<link rel="stylesheet" type="text/css" href="node_modules/tui-grid/dist/tui-grid.css" />
+	
+	
+	
+	
+	
 <script type="text/javascript">
 	function a() {
 		$("#table1").table2excel({
@@ -57,9 +64,38 @@
 			return;
 		}
 	}
-	
 
-	/* var grid = new tui.Grid({
+	var Grid = require('tui-grid')
+	
+	var gridData = [
+	    {
+	        id: '10012',
+	        city: 'Seoul',
+	        country: 'South Korea'
+	    },
+	    {
+	        id: '10013',
+	        city: 'Tokyo',
+	        country: 'Japan'    
+	    },
+	    {
+	        id: '10014',
+	        city: 'London',
+	        country: 'England'
+	    },
+	    {
+	        id: '10015',
+	        city: 'Ljubljana',
+	        country: 'Slovenia'
+	    },
+	    {
+	        id: '10016',
+	        city: 'Reykjavik',
+	        country: 'Iceland'
+	    }
+	];
+	
+	var grid = new tui.Grid({
 	    el: $('#grid'),
 	    data: gridData,
 	    scrollX: false,
@@ -86,16 +122,17 @@
 	            name: 'genre'
 	        }
 	    ]
-	}); */
-	
-	
-	
+	});
+
 	
 	
 </script>
 
 </head>
 <body>
+
+<div id="grid"></div>
+
 	<button onclick="javascript:location.href='index.jsp'">메인으로</button>
 	<button name="btn1" id="btn1" onclick="a()">Excel 다운로드</button>
 	<button name="btn2" id="btn2" onclick="chk()">체크확인</button>
@@ -106,7 +143,7 @@
 		<button>조회</button>
 	<p>
 	
-	<div id="grid"></div>
+	
 	
 	<%-- <table id="menutb">
 		<tr>
